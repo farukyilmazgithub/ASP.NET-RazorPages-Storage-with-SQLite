@@ -1,0 +1,50 @@
+@page
+@model storage.Pages.Materials.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Material</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Material.ID" />
+            <div class="form-group">
+                <label asp-for="Material.Title" class="control-label"></label>
+                <input asp-for="Material.Title" class="form-control" />
+                <span asp-validation-for="Material.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Material.Genre" class="control-label"></label>
+                <input asp-for="Material.Genre" class="form-control" />
+                <span asp-validation-for="Material.Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Material.Piece" class="control-label"></label>
+                <input asp-for="Material.Piece" class="form-control" />
+                <span asp-validation-for="Material.Piece" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Material.Date" class="control-label"></label>
+                <input asp-for="Material.Date" class="form-control" />
+                <span asp-validation-for="Material.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
